@@ -14,7 +14,7 @@ import java.util.Arrays;
  */
 public class TokenizeExam {
 
-    public void tokenize(){
+    public String[] tokenize(String content){
 
         try {
 
@@ -23,17 +23,19 @@ public class TokenizeExam {
             TokenizerModel model = new TokenizerModel(is);
             Tokenizer tokenizer = new TokenizerME(model);
 
-            String[] tokens = tokenizer.tokenize("The tokenize method is then applied, whose argument is the text to be tokenized. ");
+            String[] tokens = tokenizer.tokenize(content);
 
             Arrays.stream(tokens).forEach( s -> System.out.println(s));
 
+            return tokens;
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     public static void main(String[] args){
 
-        new TokenizeExam().tokenize();
+        new TokenizeExam().tokenize("The tokenize method is then applied, whose argument is the text to be tokenized. ");
     }
 }

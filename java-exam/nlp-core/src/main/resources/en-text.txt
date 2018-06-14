@@ -1,0 +1,9 @@
+A model is loaded from a file using the SentenceModel class. An instance of the
+SentenceDetectorME class is then created using the model, and the sentDetect
+method is invoked to perform SDB. The method returns an array of strings, with
+each element holding a sentence.
+This process is demonstrated in the following example. A try-with-resources block
+is used to open the en-sent.bin file, which contains a model. Then the paragraph
+string is processed. Next, various IO type exceptions are caught (if necessary).
+Finally, a for-each statement is used to display the sentences.
+He was the last person to see Fred. Tom said it's easy. Marin does't agree.
